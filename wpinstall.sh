@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Copyright: (c) 2017 by Bhavin Gandhi
+#License: GNU GPL v3, see LICENSE for more details 
+
 cyan="\033[1;36m"
 off_cyan="\033[0m"
 
