@@ -37,3 +37,19 @@ sudo debconf-communicate mysql-server <<< 'PURGE' &> /dev/null
 
 check_install php-fpm 
 check_install php-mysql
+
+# don't execute closest php file, if not found
+sudo sed -i -e 's/;*cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.0/fpm/php.ini
+sudo systemctl restart php7.0-fpm.service
+
+
+echo "Enter domain name: "
+read domain_name
+sudo chown $(whoami) /etc/hosts
+sudo sed -i -e "\$a127.0.0.1\t$domain_name" /etc/hosts
+sudo chown root /etc/hosts
+
+sudo cp nginx.conf /etc/nginx/sites-available/default
+sudo sed -i "s/domain_name/$domain_name/g" /etc/nginx/sites-available/default
+sudo systemctl reload nginx
+
