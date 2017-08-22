@@ -49,7 +49,8 @@ sudo chown $(whoami) /etc/hosts
 sudo sed -i -e "\$a127.0.0.1\t$domain_name" /etc/hosts
 sudo chown root /etc/hosts
 
-sudo cp nginx.conf /etc/nginx/sites-available/default
-sudo sed -i "s/domain_name/$domain_name/g" /etc/nginx/sites-available/default
+sudo cp nginx.conf /etc/nginx/sites-available/$domain_name
+sudo sed -i "s/domain_name/$domain_name/g" /etc/nginx/sites-available/$domain_name
+sudo ln -s /etc/nginx/sites-available/$domain_name /etc/nginx/sites-enabled/
 sudo systemctl reload nginx
 
