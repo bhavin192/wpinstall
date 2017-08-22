@@ -54,3 +54,10 @@ sudo sed -i "s/domain_name/$domain_name/g" /etc/nginx/sites-available/$domain_na
 sudo ln -s /etc/nginx/sites-available/$domain_name /etc/nginx/sites-enabled/
 sudo systemctl reload nginx
 
+check_install unzip
+curl -L http://wordpress.org/latest.zip -o wordpress.zip
+unzip wordpress.zip -d /tmp/
+sudo mkdir /var/www/$domain_name
+sudo mv /tmp/wordpress/* /var/www/$domain_name/
+sudo rm -rf /tmp/wordpress
+
