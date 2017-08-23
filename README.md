@@ -1,5 +1,7 @@
 # WPInstall
-[**WIP**]
+
+![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
+
 
 This script configures LEMP stack on Ubuntu machine and installs the latest WordPress.
 
