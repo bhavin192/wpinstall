@@ -62,3 +62,10 @@ sudo mkdir /var/www/$domain_name
 sudo mv /tmp/wordpress/* /var/www/$domain_name/
 sudo rm -rf /tmp/wordpress
 
+db_name=${domain_name//./_}_db
+mysql -u root -p$db_password -e "USE $db_name;"
+if [ $? -ne 0 ]; then
+    mysql -u root -p$db_password -e "CREATE DATABASE $db_name;"
+else
+    echo "Database $db_name already exist."
+fi
