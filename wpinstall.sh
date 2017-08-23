@@ -23,8 +23,8 @@ function check_install {
     fi
 }
 
-#update apt lists
-#sudo apt-get update
+# update apt lists
+sudo apt-get update
 
 check_install nginx
 check_install debconf-utils
