@@ -5,14 +5,14 @@ This script configures LEMP stack on Ubuntu machine and installs the latest Word
 
 ### How to use.
 
-Make the script executable and run it.
+Make the script executable and run it. It will ask for domain name of the site.
 
 ```sh
 $ sudo chmod +x wpinstall.sh
 $ sudo ./wpinstall.sh
 ```
 
-This script is not complete yet, and only tested on Ubuntu 16.04 instance of GCP. 
+This script works but has lot of work to be done in order to ensure if WordPress is installed correctly. Tested on Ubuntu 16.04 instance of GCP and AWS. 
 
 ## Licensing
 
