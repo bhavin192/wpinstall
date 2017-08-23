@@ -69,3 +69,19 @@ if [ $? -ne 0 ]; then
 else
     echo "Database $db_name already exist."
 fi
+
+# create wp-config.php
+sudo cp /var/www/$domain_name/wp-config-sample.php /var/www/$domain_name/wp-config.php
+
+sudo sed -i "s/database_name_here/$db_name/g" /var/www/$domain_name/wp-config.php
+sudo sed -i "s/username_here/root/g" /var/www/$domain_name/wp-config.php
+sudo sed -i "s/password_here/$db_password/g" /var/www/$domain_name/wp-config.php
+
+salts_keys=$(curl https://api.wordpress.org/secret-key/1.1/salt)
+salts_keys=$(echo $salts_keys | sed -e 's/\([[\/.*]\|\]\)/\\&/g')
+
+sudo sed -i "/_KEY/d" /var/www/$domain_name/wp-config.php
+sudo sed -i "/_SALT/d" /var/www/$domain_name/wp-config.php
+sudo sed -i "/define('DB_COLLATE', '');/a$salts_keys" /var/www/$domain_name/wp-config.php
+
+echo "Site can be browsed at http://$domain_name"
