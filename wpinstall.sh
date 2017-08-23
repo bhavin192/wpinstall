@@ -12,7 +12,7 @@ function check_install {
     dpkg-query --show $pkg_name &> /dev/null
     if [ $? -ne 0 ]; then 
         echo -e "Installing $pkg_name..."
-        sudo apt-get install $pkg_name
+        sudo apt-get install $pkg_name -y
         if [ $? -ne 0 ]; then 
             echo "Installation failed!"
         else
