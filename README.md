@@ -7,7 +7,12 @@ This script configures LEMP stack on Ubuntu machine and installs the latest Word
 
 ### How to use.
 
-Make the script executable and run it. It will ask for domain name of the site.
+- Clone the repo in a directory.
+```sh
+$ git clone https://github.com/bhavin192/wpinstall
+```
+
+- Make the script executable and run it. It will ask for domain name of the site.
 
 ```sh
 $ sudo chmod +x wpinstall.sh
