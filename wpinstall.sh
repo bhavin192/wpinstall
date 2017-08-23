@@ -29,8 +29,9 @@ function check_install {
 check_install nginx
 check_install debconf-utils
 # set configurations for mysql-server
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password secpass#1'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secpass#1'
+db_password="secpass#1"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $db_password"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $db_password"
 check_install mysql-server
 # delete the installation configurations of mysql-server
 sudo debconf-communicate mysql-server <<< 'PURGE' &> /dev/null
