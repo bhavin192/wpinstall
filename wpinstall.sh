@@ -36,7 +36,7 @@ check_install mysql-server
 # delete the installation configurations of mysql-server
 sudo debconf-communicate mysql-server <<< 'PURGE' &> /dev/null
 
-check_install php-fpm 
+check_install php7.0-fpm 
 check_install php-mysql
 
 # don't execute closest php file, if not found
