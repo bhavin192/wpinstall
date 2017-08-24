@@ -19,7 +19,7 @@ function check_install {
             echo "done."
         fi
     else    
-        echo "$pkg_name is alredy installed, skipping..."
+        echo "$pkg_name is already installed, skipping..."
     fi
 }
 
