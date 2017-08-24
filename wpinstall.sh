@@ -86,3 +86,8 @@ sudo sed -i "/_SALT/d" /var/www/$domain_name/wp-config.php
 sudo sed -i "/define('DB_COLLATE', '');/a$salts_keys" /var/www/$domain_name/wp-config.php
 
 echo "Site can be browsed at http://$domain_name"
+echo "root directory of site: /var/www/$domain_name"
+echo "nginx configuration of site: /etc/nginx/sites-available/$domain_name"
+echo "Database user: root"
+echo "Database password: $db_password"
+echo "Database name: $db_name"
