@@ -20,6 +20,12 @@ function check_install {
     fi
 }
 
+# check if running with root privileges
+if [ $(id -u) -ne 0 ]; then
+    echo "This script needs root privileges to work correctly." 1>&2
+    exit 1
+fi
+
 # update apt lists
 sudo apt-get update
 
