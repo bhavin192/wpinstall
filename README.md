@@ -21,7 +21,8 @@ $ sudo chmod +x wpinstall.sh
 $ sudo ./wpinstall.sh
 ```
 
-This script works but has lot of work to be done in order to ensure if WordPress is installed correctly. Tested on Ubuntu 16.04 instance of GCP and AWS. 
+This script works but has lot of work to be done in order to ensure if WordPress is installed correctly. 
+Tested on `Ubuntu 16.04 LTS (xenial)` instance of `GCP` and `AWS`. 
 
 ## Licensing
 
