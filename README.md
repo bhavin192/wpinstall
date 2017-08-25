@@ -12,6 +12,8 @@ This script configures LEMP stack on Ubuntu machine and installs the latest Word
 $ git clone https://github.com/bhavin192/wpinstall
 ```
 
+- Modify the file `nginx.conf` if you want to customize the site configuration.
+
 - Make the script executable and run it. It will ask for domain name of the site.
 
 ```sh
