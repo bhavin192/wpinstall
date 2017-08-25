@@ -3,15 +3,12 @@
 #Copyright: (c) 2017 by Bhavin Gandhi
 #License: GNU GPL v3, see LICENSE for more details 
 
-cyan="\033[1;36m"
-off_cyan="\033[0m"
-
 # this function will ensure that the given package is installed
 function check_install {
     pkg_name=$1
     dpkg-query --show $pkg_name &> /dev/null
     if [ $? -ne 0 ]; then 
-        echo -e "Installing $pkg_name..."
+        echo "Installing $pkg_name..."
         sudo apt-get install $pkg_name -y
         if [ $? -ne 0 ]; then 
             echo "Installation failed!"
