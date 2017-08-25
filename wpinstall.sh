@@ -53,9 +53,12 @@ check_install php-mysql
 sudo sed -i -e 's/;*cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.0/fpm/php.ini
 sudo systemctl restart php7.0-fpm.service
 
-
 echo "Enter domain name: "
 read domain_name
+while [ -z $domain_name ]; do
+    echo "domain name cannot be blank! Please enter a valid name."
+    read domain_name
+done
 sudo chown $(whoami) /etc/hosts
 sudo sed -i -e "\$a127.0.0.1\t$domain_name" /etc/hosts
 sudo chown root /etc/hosts
