@@ -13,7 +13,8 @@ function check_install {
         echo "Installing $pkg_name"
         sudo apt-get install $pkg_name -y &>> $log_file
         if [ $? -ne 0 ]; then 
-            echo "Installation failed!"
+            echo "Installation of $pkg_name failed!" 1>&2
+            exit 1
         else
             echo "done."
         fi
