@@ -21,6 +21,8 @@ $ sudo chmod +x wpinstall.sh
 $ sudo ./wpinstall.sh
 ```
 
+- Log is stored in the file `wpinstall.log`
+
 This script works but has lot of work to be done in order to ensure if WordPress is installed correctly. 
 Tested on `Ubuntu 16.04 LTS (xenial)` instance of `GCP` and `AWS`. 
 
