@@ -60,9 +60,9 @@ while [ -z $domain_name ]; do
     echo "domain name cannot be blank! Please enter a valid name."
     read domain_name
 done
-sudo chown $(whoami) /etc/hosts >> $log_file
+sudo chown $(whoami) /etc/hosts &>> $log_file
 sudo sed -i -e "\$a127.0.0.1\t$domain_name" /etc/hosts &>> $log_file
-sudo chown root /etc/hosts >> $log_file
+sudo chown root /etc/hosts &>> $log_file
 
 # create nginx configuration for $domain_name
 # check if nginx.conf exist
@@ -78,10 +78,10 @@ sudo systemctl reload nginx &>> $log_file
 check_install unzip
 curl -L http://wordpress.org/latest.zip -o wordpress.zip &>> $log_file
 unzip wordpress.zip -d /tmp/ &>> $log_file
-rm -f wordpress.zip >> $log_file
+rm -f wordpress.zip &>> $log_file
 sudo mkdir /var/www/$domain_name &>> $log_file
 sudo mv /tmp/wordpress/* /var/www/$domain_name/ &>> $log_file
-sudo rm -rf /tmp/wordpress >> $log_file
+sudo rm -rf /tmp/wordpress &>> $log_file
 
 db_name=${domain_name//./_}_db
 mysql -u root -p$db_password -e "USE $db_name;" &>> $log_file
