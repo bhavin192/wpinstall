@@ -1,0 +1,21 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./wordpress:/var/www/html:Z
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+
+  php-fpm:
+    build: php
+    volumes:
+      - ./wordpress:/var/www/html:Z
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+
+  mysqldb:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secpass#1
+      MYSQL_DATABASE: wordpress_db
