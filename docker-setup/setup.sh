@@ -1,5 +1,8 @@
 #!/bin/bash
         
+#Copyright: (c) 2017 by Bhavin Gandhi
+#License: GNU GPL v3, see LICENSE for more details 
+
 # check if running with root privileges
 if [ $(id -u) -ne 0 ]; then
     echo "This script needs root privileges to work correctly." 1>&2
