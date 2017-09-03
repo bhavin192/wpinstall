@@ -11,28 +11,28 @@ Requires [docker](https://docs.docker.com/engine/installation/#server) and [dock
 ### How to use.
 
 - Clone the repo in a directory.
-```sh
-$ git clone https://github.com/bhavin192/wpinstall
-$ cd wpinstall/docker-setup
-```
+  ```sh
+  $ git clone https://github.com/bhavin192/wpinstall
+  $ cd wpinstall/docker-setup
+  ```
 
 - If you want to have custom `php.ini` put your file in `php`
 
-To download production php.ini
-```sh
-$ curl -L https://raw.githubusercontent.com/php/php-src/master/php.ini-production -o php/php.ini
-```
+  To download production php.ini
+  ```sh
+  $ curl -L https://raw.githubusercontent.com/php/php-src/master/php.ini-production -o php/php.ini
+  ```
 
 - Make the `setup.sh` executable and run it.
-```sh
-$ sudo chmod +x setup.sh
-$ sudo ./setup.sh
-```
+  ```sh
+  $ sudo chmod +x setup.sh
+  $ sudo ./setup.sh
+  ```
 
 - Start the compose 
-```sh
-$ sudo docker-compose up
-```
+  ```sh
+  $ sudo docker-compose up
+  ```
 
 Tested on `CentOS 7` VM running `Docker v17.06.1-ce` and `docker-compose v1.16.0`
 

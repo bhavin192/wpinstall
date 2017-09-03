@@ -8,19 +8,19 @@ This script configures LEMP stack on Ubuntu machine and installs the latest Word
 ### How to use.
 
 - Clone the repo in a directory.
-```sh
-$ git clone https://github.com/bhavin192/wpinstall
-$ cd wpinstall
-```
+  ```sh
+  $ git clone https://github.com/bhavin192/wpinstall
+  $ cd wpinstall
+  ```
 
 - Modify the file `nginx.conf` if you want to customize the site configuration.
 
 - Make the script executable and run it. It will ask for domain name of the site.
 
-```sh
-$ sudo chmod +x wpinstall.sh
-$ sudo ./wpinstall.sh
-```
+  ```sh
+  $ sudo chmod +x wpinstall.sh
+  $ sudo ./wpinstall.sh
+  ```
 
 - Log is stored in the file `wpinstall.log`
 
