@@ -17,6 +17,7 @@ $ cd wpinstall/docker-setup
 ```
 
 - If you want to have custom `php.ini` put your file in `php`
+
 To download production php.ini
 ```sh
 $ curl -L https://raw.githubusercontent.com/php/php-src/master/php.ini-production -o php/php.ini
@@ -32,6 +33,8 @@ $ sudo ./setup.sh
 ```sh
 $ sudo docker-compose up
 ```
+
+Tested on `CentOS 7` VM running `Docker v17.06.1-ce` and `docker-compose v1.16.0`
 
 ## Licensing
 
