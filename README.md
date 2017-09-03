@@ -28,7 +28,7 @@ Tested on `Ubuntu 16.04 LTS (xenial)` instance of `GCP` and `AWS`.
 
 #### Using Docker
 
-To setup WordPress on LEMP stack using Docker see the [`docker-setup`](https://github.com/bhavin192/wpinstall/tree/docker/docker-setup) directory. 
+To setup WordPress on LEMP stack using Docker see the [`docker-setup`](https://github.com/bhavin192/wpinstall/tree/master/docker-setup) directory. 
 
 ## Licensing
 
