@@ -24,6 +24,8 @@ This script configures LEMP stack on Ubuntu machine and installs the latest Word
 
 - Log is stored in the file `wpinstall.log`
 
+- After successful execution of the script, open the displayed link in a browser to complete further setup.
+
 This script works but has lot of work to be done in order to ensure if WordPress is installed correctly. 
 Tested on `Ubuntu 16.04 LTS (xenial)` instance of `GCP` and `AWS`. 
 
