@@ -122,6 +122,9 @@ sed -i "/_KEY/d" /var/www/$domain_name/wp-config.php &>> $log_file
 sed -i "/_SALT/d" /var/www/$domain_name/wp-config.php &>> $log_file
 sed -i "/define('DB_COLLATE', '');/a$salts_keys" /var/www/$domain_name/wp-config.php &>> $log_file
 
+# change the owner so that php-fpm will have write access
+chown -R www-data:www-data /var/www/$domain_name/ &>> $log_file
+
 echo -e "\nSite can be browsed at http://$domain_name"
 echo "root directory of site: /var/www/$domain_name"
 echo "nginx configuration of site: /etc/nginx/sites-available/$domain_name"
