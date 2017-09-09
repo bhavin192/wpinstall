@@ -60,6 +60,10 @@ check_install php-mysql
 # don't execute closest php file, if not found
 echo "Configuring php"
 sed -i "s/;*cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php/7.0/fpm/php.ini &>> $log_file
+
+# increase post and upload size 
+sed -i "s/post_max_size = [0-9]*M/post_max_size = 200M/g" /etc/php/7.0/fpm/php.ini &>> $log_file
+sed -i "s/upload_max_filesize = [0-9]*M/upload_max_filesize = 100M/g" /etc/php/7.0/fpm/php.ini &>> $log_file
 systemctl restart php7.0-fpm.service &>> $log_file
 
 echo "Enter domain name: "
