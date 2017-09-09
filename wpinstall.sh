@@ -59,7 +59,7 @@ check_install php-mysql
 
 # don't execute closest php file, if not found
 echo "Configuring php"
-sed -i -e 's/;*cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/7.0/fpm/php.ini &>> $log_file
+sed -i "s/;*cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php/7.0/fpm/php.ini &>> $log_file
 systemctl restart php7.0-fpm.service &>> $log_file
 
 echo "Enter domain name: "
@@ -70,7 +70,7 @@ while [ -z $domain_name ]; do
 done
 echo "Creating /etc/hosts entry for new site"
 chown $(whoami) /etc/hosts &>> $log_file
-sed -i -e "\$a127.0.0.1\t$domain_name" /etc/hosts &>> $log_file
+sed -i "\$a127.0.0.1\t$domain_name" /etc/hosts &>> $log_file
 chown root /etc/hosts &>> $log_file
 
 # create nginx configuration for $domain_name
