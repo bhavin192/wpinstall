@@ -15,11 +15,22 @@ This script configures LEMP stack on Ubuntu machine and installs the latest Word
 
 - Modify the file `nginx.conf` if you want to customize the site configuration.
 
-- Make the script executable and run it. It will ask for domain name of the site.
+- Make the script executable.
 
   ```sh
   $ sudo chmod +x wpinstall.sh
+  ```
+
+- Run the script, it will ask for domain name of the site.
+  
+  ```sh 
   $ sudo ./wpinstall.sh
+  ```
+
+  or you can specify the domain name as command line argument 
+
+  ```sh
+  $ sudo ./wpinstall.sh --domain "wp.example.com"
   ```
 
 - Log is stored in the file `wpinstall.log`

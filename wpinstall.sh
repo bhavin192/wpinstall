@@ -66,12 +66,18 @@ sed -i "s/post_max_size = [0-9]*M/post_max_size = 200M/g" /etc/php/7.0/fpm/php.i
 sed -i "s/upload_max_filesize = [0-9]*M/upload_max_filesize = 100M/g" /etc/php/7.0/fpm/php.ini &>> $log_file
 systemctl restart php7.0-fpm.service &>> $log_file
 
-echo "Enter domain name: "
-read domain_name
-while [ -z $domain_name ]; do
-    echo "domain name cannot be blank! Please enter a valid name."
+if [ $1 == "--domain" ] && [ ! -z $2 ]; then 
+    echo "Found domain name $2 from command line arguments, skipping user dialouge." >> $log_file
+    domain_name=$2
+else     
+    echo "Enter domain name: "
     read domain_name
-done
+    while [ -z $domain_name ]; do
+        echo "domain name cannot be blank! Please enter a valid name."
+        read domain_name
+    done
+fi
+
 echo "Creating /etc/hosts entry for new site"
 chown $(whoami) /etc/hosts &>> $log_file
 sed -i "\$a127.0.0.1\t$domain_name" /etc/hosts &>> $log_file
