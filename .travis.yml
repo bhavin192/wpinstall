@@ -1,0 +1,8 @@
+sudo: true
+dist: xenial
+language: bash
+before_script:
+  - sudo chmod +x wpinstall.sh
+script:
+  - sudo ./wpinstall.sh --domain "wp.example.com"
+  - curl wp.example.com

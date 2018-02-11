@@ -1,6 +1,6 @@
 # WPInstall
 
-![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg) [![Docker support: present](https://img.shields.io/badge/Docker%20support-present-blue.svg)](https://www.docker.com/what-docker) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.org/bhavin192/wpinstall.svg?branch=master)](https://travis-ci.org/bhavin192/wpinstall) ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg) [![Docker support: present](https://img.shields.io/badge/Docker%20support-present-blue.svg)](https://www.docker.com/what-docker) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
 This script configures LEMP stack on Ubuntu machine and installs the latest WordPress.
