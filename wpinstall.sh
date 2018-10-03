@@ -23,7 +23,7 @@ function check_install {
     fi
 }
 
-echo -e "Installing nginx, MySQL, php on the system and deploying latest WordPress. It will aks for domain name.\n"
+echo -e "Installing nginx, MySQL, php on the system and deploying latest WordPress. It will ask for domain name.\n"
 
 # check if running on Ubuntu or Debian
 distro=$(lsb_release -i | cut -f 2) 
